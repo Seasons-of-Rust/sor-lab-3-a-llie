@@ -5,25 +5,25 @@ fn main() {
     // Once you've set up the Shop and Card structs, you should be able to
     // uncomment this code
     //
-    // let comic_book_shoppe = Shop {
-    //     cards: [
-    //         Card {
-    //             price: 10,
-    //             health: 10,
-    //             damage: 10,
-    //         },
-    //         Card {
-    //             price: 20,
-    //             health: 20,
-    //             damage: 20,
-    //         },
-    //         Card {
-    //             price: 30,
-    //             health: 30,
-    //             damage: 30,
-    //         },
-    //     ],
-    // };
+     let comic_book_shoppe = Shop {
+         cards: [
+             Card {
+                 price: 10,
+                 health: 10,
+                 damage: 10,
+             },
+             Card {
+                 price: 20,
+                 health: 20,
+                 damage: 20,
+             },
+             Card {
+                 price: 30,
+                 health: 30,
+                 damage: 30,
+             },
+         ],
+     };
 
     println!("Welcome to The Comic Book Shoppe!");
     println!("We've got three cards for you to check out.");
@@ -68,13 +68,15 @@ fn main() {
 
 /// A Shop is a collection of 3 cards.
 struct Shop {
-    // TOOD: Add the field to this struct
+    stock: [Card,Card,Card]
 }
 
 impl Shop {
     /// Get the price of the most expensive card in the shop
     fn most_expensive(&self) -> u32 {
-        todo!()
+       for card in self.stock.iter{
+
+       }
     }
 
     /// Get the total damage of all cards in the shop
@@ -90,7 +92,9 @@ impl Shop {
 
 /// A Card is a card stores a price, health, and damage.
 struct Card {
-    // TODO: Add fields to this struct
+    price: f32
+    health: i8
+    damage: i8
 }
 
 #[cfg(test)]

@@ -5,25 +5,25 @@ fn main() {
     // Once you've set up the Shop and Card structs, you should be able to
     // uncomment this code
     //
-     let comic_book_shoppe = Shop {
-         cards: [
-             Card {
-                 price: 10,
-                 health: 10,
-                 damage: 10,
-             },
-             Card {
-                 price: 20,
-                 health: 20,
-                 damage: 20,
-             },
-             Card {
-                 price: 30,
-                 health: 30,
-                 damage: 30,
-             },
-         ],
-     };
+    let comic_book_shoppe = Shop {
+        cards: [
+            Card {
+                price: 10,
+                health: 10,
+                damage: 10,
+            },
+            Card {
+                price: 20,
+                health: 20,
+                damage: 20,
+            },
+            Card {
+                price: 30,
+                health: 30,
+                damage: 30,
+            },
+        ],
+    };
 
     println!("Welcome to The Comic Book Shoppe!");
     println!("We've got three cards for you to check out.");
@@ -66,29 +66,27 @@ fn main() {
     println!("Thanks for shopping at The Comic Book Shoppe!");
 }
 
-
 /// A Shop is a collection of 3 cards.
 struct Shop {
-    cards: [Card; 3]
+    cards: [Card; 3],
 }
 
 impl Shop {
     /// Get the price of the most expensive card in the shop
     fn most_expensive(&self) -> u32 {
         let mut most_expensive = 0;
-       for card in &self.cards{
-            if card.price > most_expensive{
+        for card in &self.cards {
+            if card.price > most_expensive {
                 most_expensive = card.price;
             }
-       }
-       most_expensive
+        }
+        most_expensive
     }
-
 
     /// Get the total damage of all cards in the shop
     fn total_damage(&self) -> u32 {
         let mut total_damage = 0;
-        for card in &self.cards{
+        for card in &self.cards {
             total_damage += card.damage;
         }
         total_damage
@@ -97,18 +95,17 @@ impl Shop {
     /// Get the total health of all cards in the shop
     fn total_health(&self) -> u32 {
         let mut total_health = 0;
-        for card in &self.cards{
+        for card in &self.cards {
             total_health += card.health;
         }
         total_health
     }
-
 }
 /// A Card is a card stores a price, health, and damage.
 struct Card {
     price: u32,
     health: u32,
-    damage: u32
+    damage: u32,
 }
 
 #[cfg(test)]

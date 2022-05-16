@@ -66,35 +66,49 @@ fn main() {
     println!("Thanks for shopping at The Comic Book Shoppe!");
 }
 
+
 /// A Shop is a collection of 3 cards.
 struct Shop {
-    stock: [Card,Card,Card]
+    cards: [Card; 3]
 }
 
 impl Shop {
     /// Get the price of the most expensive card in the shop
     fn most_expensive(&self) -> u32 {
-       for card in self.stock.iter{
-
+        let mut most_expensive = 0;
+       for card in &self.cards{
+            if card.price > most_expensive{
+                most_expensive = card.price;
+            }
        }
+       most_expensive
     }
+
 
     /// Get the total damage of all cards in the shop
     fn total_damage(&self) -> u32 {
-        todo!()
+        let mut total_damage = 0;
+        for card in &self.cards{
+            total_damage += card.damage;
+        }
+        total_damage
     }
 
     /// Get the total health of all cards in the shop
     fn total_health(&self) -> u32 {
-        todo!()
+        let mut total_health = 0;
+        for card in &self.cards{
+            total_health += card.health;
+        }
+        total_health
     }
-}
 
+}
 /// A Card is a card stores a price, health, and damage.
 struct Card {
-    price: f32
-    health: i8
-    damage: i8
+    price: u32,
+    health: u32,
+    damage: u32
 }
 
 #[cfg(test)]
